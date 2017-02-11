@@ -21,7 +21,7 @@ class App extends Component {
     
     // Fetch the assets, then cache the assets in state
     // Set the loading flag to false
-    fetch('https://api.getchute.com/v2/albums/aus6kwrg/assets')
+    fetch('localhost:8081/album/123/assets')
       .then(response => response.json())
       .then(responseJson => {
         this.setState({

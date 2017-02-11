@@ -8,7 +8,7 @@ app.get('/album/123/assets', function (req, res) {
     DO FAKER STUFF HERE, REBUILD SOMETHING THAT LOOKS LIKE THE CHUTE API
   */
   
-  faker.fake("{{name.lastName}}, {{name.firstName}} {{name.suffix}}"));
+  var FAKE_DATA = faker.fake("{{image.image}} {{image.image}} {{image.image}}");
   
   res.send(FAKE_DATA)
 })

@@ -28,12 +28,14 @@ class App extends Component {
           assets: responseJson.data,
           isFetchingAssets: false,
         });
+        console.log(responseJson, '111111');
       })
       .catch((error) => {
         console.error(error);
       });
 
-      console.log(this, '22222');
+      console.log(fetch('http://localhost:8081/album/123/assets'), '22222');
+      console.log(this, '333333');
   }
 
   render() {

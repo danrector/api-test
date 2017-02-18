@@ -13,29 +13,30 @@ class App extends Component {
     this.fetchAssets()
   }
 
+
   fetchAssets() {
+
     // Set a flag so that we know if we are loading assets
     // in the render function. Use this to show a loading spinner
     // or 'Loading...' text.
+
     this.setState({isFetchingAssets: true});
-    
+
+
     // Fetch the assets, then cache the assets in state
     // Set the loading flag to false
+    
     fetch('http://localhost:8081/album/123/assets')
       .then(response => response.json())
       .then(responseJson => {
         this.setState({
-          assets: responseJson.data,
+          assets: responseJson.FAKE_DATA,
           isFetchingAssets: false,
         });
-        console.log(responseJson, '111111');
       })
       .catch((error) => {
         console.error(error);
       });
-
-      console.log(fetch('http://localhost:8081/album/123/assets'), '22222');
-      console.log(this, '333333');
   }
 
   render() {
@@ -55,7 +56,7 @@ class App extends Component {
       <ul>
         {this.state.assets.map(asset => (
           <li>
-            <img src={asset.url} />
+            <img src={asset.image} />
           </li>
         ))}
       </ul>

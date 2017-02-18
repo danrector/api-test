@@ -31,8 +31,6 @@ app.get('/album/123/assets', function (req, res) {
 
 	var FAKE_DATA = [];
 
-	// FAKE_DATA = generateCustomers ()
-
 	for (i=0; i<=9; i++) {
 
 		var data = {};

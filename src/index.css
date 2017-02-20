@@ -3,3 +3,17 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.pics {
+  float: left;
+  width: 30%;
+  height: 30%;
+  margin: .5%;
+}
+
+ul.grid {
+	list-style-type: none;
+	width:50%;
+	float: left;
+	margin-left: 30%;
+}

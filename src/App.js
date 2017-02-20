@@ -53,10 +53,10 @@ class App extends Component {
   
   renderAssets() {
     return (
-      <ul>
+      <ul className="grid">
         {this.state.assets.map(asset => (
           <li>
-            <img src={asset.image} />
+            <img className='pics' src={asset.image} />
           </li>
         ))}
       </ul>

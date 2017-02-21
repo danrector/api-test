@@ -7,13 +7,18 @@ body {
 .pics {
   float: left;
   width: 30%;
-  height: 30%;
-  margin: .5%;
+  margin: 1.5%;
 }
 
 ul.grid {
 	list-style-type: none;
-	width:50%;
-	float: left;
-	margin-left: 30%;
+	/*float: left;*/
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.HomepageHeader {
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 5%;
 }

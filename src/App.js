@@ -42,6 +42,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <h1 className='HomepageHeader'>F-nstagram</h1>
         {this.state.isFetchingAssets ? this.renderLoadingState() : this.renderAssets()}
       </div>
     );

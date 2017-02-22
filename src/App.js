@@ -39,6 +39,7 @@ class App extends Component {
     const html = document.documentElement;
     const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
     const windowBottom = windowHeight + window.pageYOffset;
+    
     if (windowBottom >= docHeight) {
       this.setState({
         isAtBottom: true,

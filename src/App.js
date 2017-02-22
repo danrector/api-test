@@ -9,21 +9,30 @@ class App extends Component {
       isAtBottom: false
     };
     this.handleScroll = this.handleScroll.bind(this);
+    
+    
+    //conole log test to make sure scroll is working
     console.log(this.state.isAtBottom);
+  
+
   }
   
+  //when component mounts, call to import first pictures
   componentWillMount() {
     this.fetchAssets()
   }
 
+  //after componet mounts, start listening for when the app scrolls to the bottom of page
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
   }
 
+  //if component unmounts, stop listening
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
+  //method to listen for app reaching end of page
   handleScroll() {
     const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
     const body = document.body;
@@ -34,15 +43,27 @@ class App extends Component {
       this.setState({
         isAtBottom: true,
       });
+
+      //second console log to verify scroll listening works properly
       console.log(this.state.isAtBottom);
+
+
     } else {
       this.setState({
         isAtBottom: false,
       });
+
+
+      //third console log to make sure state gets changed back if app is no loger at the bottom of page
       console.log(this.state.isAtBottom);
+
+
     }
   }
 
+
+
+  //method to fetch assets
   fetchAssets() {
 
     // Set a flag so that we know if we are loading assets
@@ -68,6 +89,8 @@ class App extends Component {
       });
   }
 
+
+  //render methods
   render() {
     return (
       <div>
@@ -77,10 +100,12 @@ class App extends Component {
     );
   }
   
+  //loading screen
   renderLoadingState() {
     return <span>Loading...</span>
   }
   
+  //main app screen
   renderAssets() {
     return (
       <ul className="grid">

@@ -5,14 +5,43 @@ class App extends Component {
     super();
     this.state = {
       assets: [],
-      isFetchingAssets: false
+      isFetchingAssets: false,
+      isAtBottom: false
     };
+    this.handleScroll = this.handleScroll.bind(this);
+    console.log(this.state.isAtBottom);
   }
   
   componentWillMount() {
     this.fetchAssets()
   }
 
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll() {
+    const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
+    const body = document.body;
+    const html = document.documentElement;
+    const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
+    const windowBottom = windowHeight + window.pageYOffset;
+    if (windowBottom >= docHeight) {
+      this.setState({
+        isAtBottom: true,
+      });
+      console.log(this.state.isAtBottom);
+    } else {
+      this.setState({
+        isAtBottom: false,
+      });
+      console.log(this.state.isAtBottom);
+    }
+  }
 
   fetchAssets() {
 

@@ -6,15 +6,8 @@ class App extends Component {
     this.state = {
       assets: [],
       isFetchingAssets: false,
-      isAtBottom: false
     };
     this.handleScroll = this.handleScroll.bind(this);
-    
-    
-    //conole log test to make sure scroll is working
-
-    console.log(this.state.isAtBottom);
-  
 
   }
   
@@ -44,31 +37,10 @@ class App extends Component {
     const html = document.documentElement;
     const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
     const windowBottom = windowHeight + window.pageYOffset;
-    
-    if (windowBottom >= docHeight) {
-      this.setState({
-        isAtBottom: true,
-      });
 
-      //second console log to verify scroll listening works properly
-
-      console.log(this.state.isAtBottom);
-
+    if (windowBottom >= docHeight && !this.state.isFetchingAssets) {
       this.fetchAssets();
-
-
-    } else {
-      this.setState({
-        isAtBottom: false,
-      });
-
-
-      //third console log to make sure state gets changed back if app is no loger at the bottom of page
-
-      console.log(this.state.isAtBottom);
-
-
-    }
+    } 
   }
 
 
@@ -102,15 +74,6 @@ class App extends Component {
 
 
   //render methods
-
-  // render() {
-  //   return (
-  //     <div>
-  //       <h1 className='HomepageHeader'>F-nstagram</h1>
-  //       {this.state.isFetchingAssets ? this.renderLoadingState() : this.renderAssets()}
-  //     </div>
-  //   );
-  // }
 
   render() {
     return (

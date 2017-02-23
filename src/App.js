@@ -38,8 +38,11 @@ class App extends Component {
     const docHeight = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight,  html.scrollHeight, html.offsetHeight);
     const windowBottom = windowHeight + window.pageYOffset;
 
+    console.log('11111111111');
+
     if (windowBottom >= docHeight && !this.state.isFetchingAssets) {
       this.fetchAssets();
+      console.log('222222222222');
     } 
   }
 

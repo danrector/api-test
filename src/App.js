@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import {debounce} from 'throttle-debounce';
 
 class App extends Component {
   constructor() {
     super();
+    this.handleScroll = debounce(500, this.handleScroll);
     this.state = {
       assets: [],
       isFetchingAssets: false,

@@ -51,8 +51,10 @@ class App extends Component {
       });
 
       //second console log to verify scroll listening works properly
-      
+
       console.log(this.state.isAtBottom);
+
+      this.fetchAssets();
 
 
     } else {
@@ -89,7 +91,7 @@ class App extends Component {
       .then(response => response.json())
       .then(responseJson => {
         this.setState({
-          assets: responseJson.FAKE_DATA,
+          assets: this.state.assets.concat(responseJson.FAKE_DATA),
           isFetchingAssets: false,
         });
       })
@@ -101,11 +103,21 @@ class App extends Component {
 
   //render methods
 
+  // render() {
+  //   return (
+  //     <div>
+  //       <h1 className='HomepageHeader'>F-nstagram</h1>
+  //       {this.state.isFetchingAssets ? this.renderLoadingState() : this.renderAssets()}
+  //     </div>
+  //   );
+  // }
+
   render() {
     return (
       <div>
         <h1 className='HomepageHeader'>F-nstagram</h1>
-        {this.state.isFetchingAssets ? this.renderLoadingState() : this.renderAssets()}
+        {this.renderAssets()}
+        {this.state.isFetchingAssets && this.renderLoadingState()}
       </div>
     );
   }

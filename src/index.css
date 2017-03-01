@@ -4,12 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-.pics {
-  float: left;
-  width: 30%;
-  margin: 1.5%;
-}
-
 ul.grid {
 	list-style-type: none;
 	/*float: left;*/
@@ -21,4 +15,22 @@ ul.grid {
 	text-align: center;
 	margin-top: 5%;
 	margin-bottom: 5%;
+}
+
+.pics {
+float: left;
+width: 100%;
+margin: 1.5%;
+}
+
+@media (min-width: 500px) {
+.pics {
+width: 45%;
+}
+}
+
+@media (min-width: 800px) {
+.pics {
+width: 30%;
+}
 }

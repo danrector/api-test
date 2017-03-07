@@ -31,7 +31,7 @@ app.get('/album/123/assets', function (req, res) {
 
 	var FAKE_DATA = [];
 
-	for (i=0; i<=9; i++) {
+	for (i=0; i<=11; i++) {
 
 		var data = {};
 

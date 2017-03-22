@@ -52,12 +52,6 @@ class App extends Component {
 
     if (windowBottom >= docHeight && !this.state.isFetchingAssets) {
       this.fetchAssets();
-
-//SCROLL TEST
-//
-//
-
-      console.log(this, 'THIS IS THE SCROLL DECTION');
     } 
   }
 
@@ -117,6 +111,8 @@ class App extends Component {
 
 
   handleClick() {
+    this.setState({lightboxAsset: this.state.assets.id});
+
     console.log(this, 'THIS IS THE CLICK AN ASSET TEST');
   }
 

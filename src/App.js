@@ -85,7 +85,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1 className='HomepageHeader'>F-nstagram</h1>
+        <h1 className='HomepageHeader'>Fake-Instagram</h1>
         {this.renderAssets()}
         {this.state.isFetchingAssets && this.renderLoadingState()}
       </div>

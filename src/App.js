@@ -84,6 +84,19 @@ class App extends Component {
       });
   }
 
+  //clicking functionality
+
+// ON CLICK TEST
+//
+//
+
+
+  handleClick(asset) {
+    this.setState({lightboxAsset: asset});
+
+    console.log(this.state.lightboxAsset.id, this.state.lightboxAsset.url, 'THIS IS THE CLICK AN ASSET TEST');
+  }
+
 
   //render methods
 
@@ -92,7 +105,7 @@ class App extends Component {
       <div>
         <h1 className='HomepageHeader'>Fake-Instagram</h1>
         {this.renderAssets()}
-        {this.renderLightBox()}
+        {this.state.lightboxAsset && this.renderLightBox()}
         {this.state.isFetchingAssets && this.renderLoadingState()}
       </div>
     );
@@ -102,19 +115,6 @@ class App extends Component {
 
   renderLoadingState() {
     return <span>Loading...</span>
-  }
-  
-  //clicking functionality
-
-// ON CLICK TEST
-//
-//
-
-
-  handleClick(asset) {
-    this.setState({lightboxAsset: asset.id});
-
-    console.log(this, 'THIS IS THE CLICK AN ASSET TEST');
   }
 
   //main app screen
@@ -143,11 +143,11 @@ class App extends Component {
   renderLightBox() {
     return (
       <div className='lightBoxDiv'>
-        <li>
+      
           <img 
-            src='http://cdn.pitchfork.com/news/56526/f40a1fae.jpg'
+            src={this.state.lightboxAsset.url}
           />
-        </li>
+        
       </div>
     )
   }

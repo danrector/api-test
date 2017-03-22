@@ -28,6 +28,8 @@ class App extends Component {
 
 
 // APP TEST 1
+//
+//
 
 
     console.log(this, 'THIS IS THE API TEST');
@@ -52,6 +54,8 @@ class App extends Component {
       this.fetchAssets();
 
 //SCROLL TEST
+//
+//
 
       console.log(this, 'THIS IS THE SCROLL DECTION');
     } 
@@ -108,6 +112,10 @@ class App extends Component {
   //clicking functionality
 
 // ON CLICK TEST
+//
+//
+
+
   handleClick() {
     console.log(this, 'THIS IS THE CLICK AN ASSET TEST');
   }

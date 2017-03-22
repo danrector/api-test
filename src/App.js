@@ -10,6 +10,7 @@ class App extends Component {
       isFetchingAssets: false,
     };
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleClick = this.handleClick.bind(this);
 
   }
   
@@ -23,6 +24,10 @@ class App extends Component {
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
+
+
+
+    console.log(this);
   }
 
   //if component unmounts, stop listening
@@ -93,6 +98,13 @@ class App extends Component {
     return <span>Loading...</span>
   }
   
+  //clicking functionality
+
+
+  handleClick() {
+    console.log(this, 'i clicked this, 111111111');
+  }
+
   //main app screen
 
   renderAssets() {
@@ -100,10 +112,27 @@ class App extends Component {
       <ul className="grid">
         {this.state.assets.map(asset => (
           <li>
-            <img className='pics' src={asset.image} />
+            <img 
+              className='pics' 
+              src={asset.url} 
+              onClick={
+                this.handleClick.bind(null, asset)
+              }  
+            />
           </li>
         ))}
       </ul>
+    )
+  }
+
+
+  //lightbox
+
+  renderLightBox() {
+    return (
+      <div className='lightBoxDiv'>
+        
+      </div>
     )
   }
 }

@@ -17,19 +17,27 @@ ul.grid {
 }
 
 .pics {
-float: left;
-width: 100%;
-margin: 1.5%;
+	float: left;
+	width: 100%;
+	margin: 1.5%;
 }
 
 @media (min-width: 500px) {
-.pics {
-width: 45%;
-}
+	.pics {
+		width: 45%;
+	}
 }
 
 @media (min-width: 800px) {
-.pics {
-width: 30%;
+	.pics {
+		width: 30%;
+	}
 }
+
+.lightBoxDiv {
+	position: fixed;
+	top: 10%;
+	left: 25%;
+	width: 75%;
+	
 }

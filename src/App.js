@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       assets: [],
       isFetchingAssets: false,
-      lightboxAsset: null,
+      lightboxAsset: false,
     };
     this.handleScroll = this.handleScroll.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -92,6 +92,7 @@ class App extends Component {
       <div>
         <h1 className='HomepageHeader'>Fake-Instagram</h1>
         {this.renderAssets()}
+        {this.renderLightBox()}
         {this.state.isFetchingAssets && this.renderLoadingState()}
       </div>
     );
@@ -110,8 +111,8 @@ class App extends Component {
 //
 
 
-  handleClick() {
-    this.setState({lightboxAsset: this.state.assets.id});
+  handleClick(asset) {
+    this.setState({lightboxAsset: asset.id});
 
     console.log(this, 'THIS IS THE CLICK AN ASSET TEST');
   }
@@ -142,7 +143,11 @@ class App extends Component {
   renderLightBox() {
     return (
       <div className='lightBoxDiv'>
-        
+        <li>
+          <img 
+            src='http://cdn.pitchfork.com/news/56526/f40a1fae.jpg'
+          />
+        </li>
       </div>
     )
   }

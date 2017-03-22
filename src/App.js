@@ -8,6 +8,7 @@ class App extends Component {
     this.state = {
       assets: [],
       isFetchingAssets: false,
+      lightboxAsset: null,
     };
     this.handleScroll = this.handleScroll.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -29,7 +30,7 @@ class App extends Component {
 // APP TEST 1
 
 
-    console.log(this);
+    console.log(this, 'THIS IS THE API TEST');
   }
 
   //if component unmounts, stop listening
@@ -49,6 +50,10 @@ class App extends Component {
 
     if (windowBottom >= docHeight && !this.state.isFetchingAssets) {
       this.fetchAssets();
+
+//SCROLL TEST
+
+      console.log(this, 'THIS IS THE SCROLL DECTION');
     } 
   }
 
@@ -102,9 +107,9 @@ class App extends Component {
   
   //clicking functionality
 
-
+// ON CLICK TEST
   handleClick() {
-    console.log(this, 'i clicked this, 111111111');
+    console.log(this, 'THIS IS THE CLICK AN ASSET TEST');
   }
 
   //main app screen

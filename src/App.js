@@ -26,6 +26,8 @@ class App extends Component {
     window.addEventListener("scroll", this.handleScroll);
 
 
+// APP TEST 1
+
 
     console.log(this);
   }

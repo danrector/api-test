@@ -34,10 +34,42 @@ ul.grid {
 	}
 }
 
+/*fix lightbox container, needs transparent background*/
+/*
+*/
+
+.lightBoxContainer {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.75);
+}
+
 .lightBoxDiv {
 	position: fixed;
 	top: 10%;
-	left: 25%;
+	left: 10%;
 	width: 75%;
-	
+	background-color: #D3D3D3;
+}
+
+.lightBoxImage {
+	float:left;
+	width: 60%;
+}
+
+.lightBoxText {
+	float: right;
+	width: 30%;
+	margin: 2%;
+}
+
+.avatarPic {
+	width: 20%;
+	float: left;
+	padding: 5%;
+	padding-right: 10%;
+}
+
+.lightBoxComments {
+	margin-top: 20%;
 }

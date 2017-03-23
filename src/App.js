@@ -142,12 +142,21 @@ class App extends Component {
 
   renderLightBox() {
     return (
-      <div className='lightBoxDiv'>
-      
-          <img 
+      <div className='lightBoxContainer'>
+        <div className='lightBoxDiv'>
+          <img
+            className='lightBoxImage' 
             src={this.state.lightboxAsset.url}
           />
-        
+          <div className='lightBoxText'>
+            <img
+              className='avatarPic' 
+              src={this.state.lightboxAsset.user.avatar}
+            />
+            <h1>{this.state.lightboxAsset.username}</h1>
+            <p className='lightBoxComments'>{this.state.lightboxAsset.caption}</p>
+          </div>
+        </div>
       </div>
     )
   }

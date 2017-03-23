@@ -74,6 +74,10 @@ ul.grid {
 	margin-top: 20%;
 }
 
+.lightBoxHearts: {
+	float: left;
+}
+
 .LightBoxUserName {
 	font-weight: bold;
 }

@@ -73,3 +73,7 @@ ul.grid {
 .lightBoxComments {
 	margin-top: 20%;
 }
+
+.LightBoxUserName {
+	font-weight: bold;
+}

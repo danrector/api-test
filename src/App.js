@@ -140,6 +140,8 @@ class App extends Component {
 
   //lightbox
 
+  //add day counter
+
   renderLightBox() {
     return (
       <div className='lightBoxContainer'>
@@ -156,6 +158,7 @@ class App extends Component {
             <h1>{this.state.lightboxAsset.username}</h1>
             <p>{this.state.lightboxAsset.hearts} hearts</p>
             <p className='lightBoxComments'>
+              <span className='LightBoxUserName'>{this.state.lightboxAsset.username + ' '}</span>
               {this.state.lightboxAsset.caption}
             </p>
 

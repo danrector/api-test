@@ -97,6 +97,10 @@ class App extends Component {
     console.log(this.state.lightboxAsset.id, this.state.lightboxAsset.url, 'THIS IS THE CLICK AN ASSET TEST');
   }
 
+  handleClickClose() {
+    this.setState({lightboxAsset: false});
+  }
+
 
   //render methods
 
@@ -163,7 +167,7 @@ class App extends Component {
               <span className='LightBoxUserName'>{this.state.lightboxAsset.username + ' '}</span>
               {this.state.lightboxAsset.caption}
             </p>
-            <button>
+            <button onClick={this.handleClickClose()}>
               close
             </button>
           </div>

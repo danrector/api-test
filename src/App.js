@@ -154,6 +154,7 @@ class App extends Component {
               src={this.state.lightboxAsset.user.avatar}
             />
             <h1>{this.state.lightboxAsset.username}</h1>
+            <p>{this.state.lightboxAsset.hearts} hearts</p>
             <p className='lightBoxComments'>
               {this.state.lightboxAsset.caption}
             </p>
